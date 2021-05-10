@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import Home from './Home';
+import AboutMe from './AboutMe';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>To Do List Manager</h1>        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Let's get this party started.
-        </a>
+        <nav className = "NavBar">
+          <ul>
+            <li><a href = "/">Home</a></li>
+            <li><a href = "/AboutMe">AboutMe</a></li>
+          </ul>
+        </nav>
+
       </header>
+    <main>
+      <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/AboutMe">
+            <AboutMe />
+          </Route>
+      </Switch>
+    </main>    
+
     </div>
   );
 }
