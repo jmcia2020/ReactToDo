@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <h1>To Do List Manager</h1>        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Houston we have a problem.
+          Let's get this party started.
         </a>
       </header>
     </div>
