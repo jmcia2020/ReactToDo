@@ -20,7 +20,7 @@ export default function ToDoHeader() {
     </Form>
   };
 
-DifficultyLevel(){
+Difficulty(){
   return 
 <ProgressBar difficulty={4} />
 }
