@@ -34,8 +34,17 @@ export default function ToDoList()
     return (
         <>
             {list.map(item => (
-                <div>{item.title}</div>
+                <ToDoItem todo={item} />
             ))}
         </>
+    )
+}
+
+function ToDoItem(props)
+{
+    const { todo } = props;
+
+    return (
+        <h3>{todo.title}</h3>
     )
 }
