@@ -1,7 +1,9 @@
 import './App.css';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import AboutMe from './AboutMe';
+
+
 
 function App() {
   return (
@@ -9,22 +11,23 @@ function App() {
       <header className="App-header">
         <nav className = "NavBar">
           <ul>
-            <li><a href = "/">Home</a></li>
-            <li><a href = "/AboutMe">AboutMe</a></li>
+            <li><NavLink to = "/">Home</NavLink></li>
+            <li><NavLink to = "/AboutMe">AboutMe</NavLink></li>
           </ul>
         </nav>
 
       </header>
-    <main>
-      <Switch>
+      
+      <main>
+        <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/AboutMe">
             <AboutMe />
           </Route>
-      </Switch>
-    </main>    
+        </Switch>
+      </main>    
 
     </div>
   );
