@@ -1,30 +1,24 @@
-import { Form, FormControl, FormGroup, Col, FormLabel, InputGroup, Button } from 'react-bootstrap';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import { Form, Button } from 'react-bootstrap';
 
-export default function ToDoHeader() {
+export default function ToDoForm() {
   return (
-    <h1>Add To Do Item</h1>  
-  )}
-
-  AddToDoForm()
-  {
-    <Form>
-      <FormGroup controlId="AddToDo">
-        <FormLabel>To Do Item</FormLabel>
-        <FormControl type="text" placeholder="Item Details" />
-      </FormGroup>
-      <FormGroup controlId="AssignedTo">
-        <FormLabel>Assigned To</FormLabel>
-        <FormControl type="text" placeholder="Assignee Name" />
-      </FormGroup>
-    </Form>
-  };
-
-Difficulty(){
-  return 
-<ProgressBar difficulty={4} />
-}
-
-<>
-  <Button variant="addItem">Primary</Button>{'Add Item'}
-</>
+    <div class="todo-form">
+      <h2>Add To Do Item</h2>
+      <Form>
+        <Form.Group controlId="AddToDo">
+          <Form.Label>To Do Item</Form.Label>
+          <Form.Control type="text" placeholder="Item Details" />
+        </Form.Group>
+        <Form.Group controlId="AssignedTo">
+          <Form.Label>Assigned To</Form.Label>
+          <Form.Control type="text" placeholder="Assignee Name" />
+        </Form.Group>
+        <Form.Group controlId="Difficulty">
+          <Form.Label>Difficulty</Form.Label>
+          <Form.Control type="range" min="0" max="5" step="1" />
+        </Form.Group>
+        <Button variant="primary">Add Item</Button>
+      </Form>
+    </div>
+  );
+};

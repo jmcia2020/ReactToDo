@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <nav className = "NavBar">
           <ul>
-            <li><NavLink to = "/">Home</NavLink></li>
+            <li><NavLink to = "/" exact>Home</NavLink></li>
             <li><NavLink to = "/AboutMe">AboutMe</NavLink></li>
           </ul>
         </nav>
