@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
@@ -37,7 +38,9 @@ const list = [
 ];
 
 export default function Home(){
-  const incompleteCount = list.filter(todo => !todo.completed).length;
+  const [todos, setTodos] = useState(list);
+
+  const incompleteCount = todos.filter(todo => !todo.completed).length;
 
   return(
     <>
@@ -54,7 +57,7 @@ export default function Home(){
             <ToDoForm />
           </Col>
           <Col>
-            {list.map(item => (
+            {todos.map(item => (
               <ToDoItem key={item.id} todo={item} />
               ))};
           </Col>
