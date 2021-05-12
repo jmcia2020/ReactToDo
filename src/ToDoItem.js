@@ -6,17 +6,25 @@ export default function ToDoItem(props)
 {
     const { todo } = props;
 
+    const deleteItem = () =>
+    {
+      console.log('delete!', todo);
+      props.onDelete(todo.id);
+    }
+
+    const handleToggle = () => {
+        todo.completed = !todo.completed; // not saved in state
+
+        props.onToggleComplete(todo.id);
+    }
+
     const pillText = todo.completed ? 'Complete' : 'Pending';
     const pillVariant = todo.completed ? 'danger' : 'success';
 
-    const [show, setShow] = React.useState(true);
-    const toggleShow = () => setShow(!show);
-
     return (
-        <Toast>
-           <Toast show={show} onClose={toggleShow}></Toast> 
+        <Toast onClose={deleteItem}>
             <Toast.Header>
-                <Badge pill variant={pillVariant}>{pillText}</Badge>
+                <Badge pill variant={pillVariant} onClick={handleToggle}>{pillText}</Badge>
                 <strong className="ml-2 mr-auto">{todo.assignedTo}</strong>
             </Toast.Header>
             <Toast.Body>
