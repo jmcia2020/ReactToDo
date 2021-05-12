@@ -49,6 +49,11 @@ export default function Home(){
     setTodos(todosWithoutId);
   }
 
+  const toggleComplete = (id) => {
+    console.log('toggleComplete', id);
+    // TODO: setState with a *new* array
+  }
+
   return(
     <>
       <Container>
@@ -67,6 +72,7 @@ export default function Home(){
             {todos.map(item => (
               <ToDoItem key={item.id} todo={item}
                 onDelete={removeTodo}
+                onToggleComplete={toggleComplete}
                 />
               ))};
           </Col>

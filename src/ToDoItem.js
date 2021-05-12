@@ -12,13 +12,19 @@ export default function ToDoItem(props)
       props.onDelete(todo.id);
     }
 
+    const handleToggle = () => {
+        todo.completed = !todo.completed; // not saved in state
+
+        props.onToggleComplete(todo.id);
+    }
+
     const pillText = todo.completed ? 'Complete' : 'Pending';
     const pillVariant = todo.completed ? 'danger' : 'success';
 
     return (
         <Toast onClose={deleteItem}>
             <Toast.Header>
-                <Badge pill variant={pillVariant}>{pillText}</Badge>
+                <Badge pill variant={pillVariant} onClick={handleToggle}>{pillText}</Badge>
                 <strong className="ml-2 mr-auto">{todo.assignedTo}</strong>
             </Toast.Header>
             <Toast.Body>
