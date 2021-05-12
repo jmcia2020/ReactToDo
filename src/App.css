@@ -28,7 +28,9 @@ h1 {
 }
 
 .todo-form {
-  border: 2px gray solid;
+  border: 2px lightgray solid;
+  box-shadow: 10px, 10px, 5px, lightgray;
   border-radius: 10px;
   padding: 10px;
+  width: 40%;
 }
