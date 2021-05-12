@@ -21,7 +21,7 @@
 
 h1 {
   padding: 25px;
-  margin: 100px 50px 30px 50px;
+  margin: 100px 0 30px;
 
   font-size: 30px;
   color:  #e4e5e5;
@@ -32,9 +32,4 @@ h1 {
   border: 2px lightgray solid;
   border-radius: 10px;
   padding: 10px;
-  width: 40%;
-}
-
-.todo-item {
-  float: left;
 }

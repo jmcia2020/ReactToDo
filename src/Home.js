@@ -41,19 +41,18 @@ export default function Home(){
 
   return(
     <>
-      <h1>
-        To Do List Manager <Badge variant="secondary">{incompleteCount}</Badge>
-      </h1>
       <Container>
+        <Row>
+          <Col>
+            <h1>
+              To Do List Manager <Badge variant="secondary">{incompleteCount}</Badge>
+            </h1>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <ToDoForm />
           </Col>
-        </Row> 
-      </Container> 
-
-      <Container>
-        <Row>
           <Col>
             {list.map(item => (
               <ToDoItem key={item.id} todo={item} />
