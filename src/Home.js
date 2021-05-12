@@ -46,7 +46,7 @@ export default function Home(){
       </h1>
       <Container>
         <Row>
-          <Col>1 of 2
+          <Col>
             <ToDoForm />
           </Col>
         </Row> 
@@ -54,7 +54,7 @@ export default function Home(){
 
       <Container>
         <Row>
-          <Col>2 of 2
+          <Col>
             {list.map(item => (
               <ToDoItem key={item.id} todo={item} />
               ))};

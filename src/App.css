@@ -13,24 +13,28 @@
 .NavBar li a {
  font-size: 25px;
  text-decoration-line: none;
+ vertical-align: middle;
  padding: 20px;
  color: #85bdff;
 }
 
 
-
 h1 {
   padding: 25px;
-  margin: 100px;
-  font-size: 25px;
+  margin: 100px 50px 30px 50px;
+
+  font-size: 30px;
   color:  #e4e5e5;
   background-color: #343A40;
 }
 
 .todo-form {
   border: 2px lightgray solid;
-  box-shadow: 10px, 10px, 5px, lightgray;
   border-radius: 10px;
   padding: 10px;
   width: 40%;
+}
+
+.todo-item {
+  float: left;
 }
