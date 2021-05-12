@@ -12,8 +12,7 @@ export default function ToDoItem(props)
     const pillVariant = todo.completed ? 'danger' : 'success';
 
     return (
-        <Toast>
-           <Toast show={show} onClose={toggleShow}></Toast> 
+        <Toast show={show} onClose={toggleShow}>
             <Toast.Header>
                 <Badge pill variant={pillVariant}>{pillText}</Badge>
                 <strong className="ml-2 mr-auto">{todo.assignedTo}</strong>
