@@ -5,6 +5,7 @@ export default function ToDoForm() {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(e.target.ToDoItem.value, e.target.ToDoAssigned.value);
+    console.log(e.target.difficulty.value);
   }
   return (
     <div className="todo-form">
