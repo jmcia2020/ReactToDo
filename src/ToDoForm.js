@@ -8,7 +8,7 @@ export default function ToDoForm() {
   }
   return (
     <div className="todo-form">
-      <h2>Add To Do Item</h2>
+      <h4>Add To Do Item</h4>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="AddToDo">
           <Form.Label>To Do Item</Form.Label>

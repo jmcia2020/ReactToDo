@@ -1,3 +1,4 @@
+import React from "react";
 import Badge from 'react-bootstrap/Badge';
 import Toast from 'react-bootstrap/Toast';
 
@@ -8,11 +9,15 @@ export default function ToDoItem(props)
     const pillText = todo.completed ? 'Complete' : 'Pending';
     const pillVariant = todo.completed ? 'danger' : 'success';
 
+    const [show, setShow] = React.useState(true);
+    const toggleShow = () => setShow(!show);
+
     return (
         <Toast>
+           <Toast show={show} onClose={toggleShow}></Toast> 
             <Toast.Header>
                 <Badge pill variant={pillVariant}>{pillText}</Badge>
-                <strong class="ml-2 mr-auto">{todo.assignedTo}</strong>
+                <strong className="ml-2 mr-auto">{todo.assignedTo}</strong>
             </Toast.Header>
             <Toast.Body>
                 {todo.title}
