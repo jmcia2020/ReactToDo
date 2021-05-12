@@ -3,6 +3,7 @@
   width: 100%;
   background-color: #2596be;
   position: fixed;
+  z-index: 1;
 }
 
 .NavBar li{
