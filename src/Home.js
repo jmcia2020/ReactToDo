@@ -42,6 +42,13 @@ export default function Home(){
 
   const incompleteCount = todos.filter(todo => !todo.completed).length;
 
+  const removeTodo = (id) => {
+    console.log('removeTodo', id);
+    const todosWithoutId = todos.filter(todo => todo.id !== id);
+    console.log(todosWithoutId);
+    setTodos(todosWithoutId);
+  }
+
   return(
     <>
       <Container>
@@ -58,7 +65,9 @@ export default function Home(){
           </Col>
           <Col>
             {todos.map(item => (
-              <ToDoItem key={item.id} todo={item} />
+              <ToDoItem key={item.id} todo={item}
+                onDelete={removeTodo}
+                />
               ))};
           </Col>
         </Row>
