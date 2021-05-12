@@ -74,7 +74,7 @@ export default function Home(){
                 onDelete={removeTodo}
                 onToggleComplete={toggleComplete}
                 />
-              ))};
+              ))}
           </Col>
         </Row>
       </Container>
