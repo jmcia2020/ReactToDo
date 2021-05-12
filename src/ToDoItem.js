@@ -3,14 +3,13 @@ import Badge from 'react-bootstrap/Badge';
 import Toast from 'react-bootstrap/Toast';
 
 export default function ToDoItem(props)
-{
+{   const [show, setShow] = React.useState(true);
+    const toggleShow = () => setShow(!show);
+    
     const { todo } = props;
 
     const pillText = todo.completed ? 'Complete' : 'Pending';
     const pillVariant = todo.completed ? 'danger' : 'success';
-
-    const [show, setShow] = React.useState(true);
-    const toggleShow = () => setShow(!show);
 
     return (
         <Toast>
