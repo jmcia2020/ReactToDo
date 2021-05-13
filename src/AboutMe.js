@@ -1,6 +1,6 @@
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
-import { useAuth } from '../contexts/Auth';
+import { useAuth } from './contexts/Auth';
 
 export default function AboutMe(props){
 
@@ -12,9 +12,10 @@ export default function AboutMe(props){
     <>
       <h1>Let's Get Acquainted.</h1>
       <Alert variant="success">Our first alert!</Alert>
-      <Alert variant="danger">Our first alert, {user}!</Alert>
+      <Alert variant="danger">Our first alert, {user.username}!</Alert>
             <Button variant="danger">Hi!</Button>
     </>
-    
   )
+
+  
 }

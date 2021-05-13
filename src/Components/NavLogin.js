@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../contexts/auth';
+import { useAuth } from '../contexts/Auth';
 
 export default function NavLogin(props) {
     //const { user } = props;
@@ -10,7 +10,7 @@ export default function NavLogin(props) {
 
     if (user) {
         return (
-            <li>Hi, {user.name}</li>
+            <li>Hi, {user.username}</li>
         );
     }
 
