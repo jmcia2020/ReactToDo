@@ -29,6 +29,23 @@ h1 {
   background-color: #343A40;
 }
 
+.form-group {
+  float: right;
+  width: 30%
+}
+
+.input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 10px;
+  border: none;
+  width: 60px;
+}
+
+.form-group button{
+  
+}
+
 .todo-form {
   border: 2px lightgray solid;
   border-radius: 10px;

@@ -62,6 +62,16 @@ export default function Home(){
           <Col>
             <h1>
               To Do List Manager <Badge variant="secondary">{incompleteCount}</Badge>
+              <form>
+              
+              <div class="form-group">
+                <input type="password" class="form-control" id="InputPassword" placeholder="Password"></input>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Enter username"></input>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
             </h1>
           </Col>
         </Row>
