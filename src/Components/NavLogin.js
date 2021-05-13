@@ -1,7 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../contexts/auth';
 
 export default function NavLogin(props) {
-    const { user } = props;
+    //const { user } = props;
+    const auth = useAuth();
+    console.log(auth);
+    const { user } = auth;
+    console.log(user);
 
     if (user) {
         return (
