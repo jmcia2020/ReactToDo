@@ -43,7 +43,7 @@ h1 {
 }
 
 .form-group button{
-  
+  float: right;
 }
 
 .todo-form {
