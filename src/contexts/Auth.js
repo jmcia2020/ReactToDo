@@ -1,4 +1,8 @@
 import { createContext, useContext, useState } from 'react';
+import jwt from 'jsonwebtoken';
+
+// Normally get this from our environment
+const usersAPI = 'https://deltav-todo.azurewebsites.net/api/v1/Users';
 
 export const AuthContext = createContext();
 
@@ -17,21 +21,42 @@ export function AuthProvider(props) {
       logout,
   });
 
-  function login(username, password) {
+  async function login(username, password) {
     console.log({username, password});
 
-    setUser({ name: username });
-  }
+    const result = await fetch(`${usersAPI}/Login`, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password }),
+    });
+
+    const resultBody = await result.json();
+
+    if (result.ok) {
+        return setUser(resultBody);
+    }
+
+    // TODO: process validation errors
+
+    // Make sure we're not logged in!
+    return logout();
+}
 
   function logout() {
     setUser(null);
   }
 
   function setUser(user) {
+    // pull permissions out of token
+    user = processToken(user);
+
     setState(prevState => ({
         ...prevState, // spread operator
         user,
     }));
+    return user;
 }
 
   return (
@@ -41,27 +66,22 @@ export function AuthProvider(props) {
   );
 } 
 
-/*
-async function login(username, password){
-  console.log({username, password}),
+function processToken(user) {
+  if (!user)
+    return null;
 
-  const result = await fetch ('${userAPI}/Login', {
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ username, password }),
-  });
+  try {
+    const payload = jwt.decode(user.token);
+    if (payload){
+      console.log('token payload', payload);
+      user.permissions = payload.permissions || [];
+      return user;
+    }
 
-  const resultBody = await result.json();
-
-  if (result.ok) {
-    return setUser(resultBody);
+    return null;
   }
-
-  // TODO: process validation errors
-
-  logout();
-  return false;
+  catch (e) {
+    console.warn(e);
+    return null;
+  }
 }
-*/
