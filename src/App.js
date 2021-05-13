@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import NavLogin from './Components/NavLogin';
 import {Switch, Route, NavLink } from 'react-router-dom';
+import Login from './Components/auth/Login.js';
 import Home from './Home';
 import AboutMe from './AboutMe';
 import './App.css';
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/AboutMe">
             <AboutMe />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
         </Switch>
       </main>    

@@ -12,7 +12,7 @@ export default function AboutMe(props){
     <>
       <h1>Let's Get Acquainted.</h1>
       <Alert variant="success">Our first alert!</Alert>
-      {/* <Alert variant="danger">Our first alert, {user.name}!</Alert> */}
+      <Alert variant="danger">Our first alert, {user}!</Alert>
             <Button variant="danger">Hi!</Button>
     </>
     
