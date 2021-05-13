@@ -1,7 +1,18 @@
 import { useAuth } from '../../contexts/Auth';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { user, login, logout } = useAuth();
+
+  
+  if (user) {
+    function handleLogout() {
+        logout();
+    }
+
+    return (
+        <button onClick={handleLogout}>Log Out</button>
+    )
+}
 
   const handleSubmit = e => {
       e.preventDefault();
