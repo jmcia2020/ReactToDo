@@ -18,17 +18,15 @@ function App() {
           <ul>
             <li><NavLink to = "/" exact>Home</NavLink></li>
             <li><NavLink to = "/AboutMe">AboutMe</NavLink></li>
-            <NavLogin user={user} />
+            <NavLogin > </NavLogin>
           </ul>
         </nav>
-
       </header>
       
       <main>
         <Switch>
           <Route path="/" exact>
             <Home />
-            <Home user={user} />
           </Route>
           <Route path="/AboutMe">
             <AboutMe />

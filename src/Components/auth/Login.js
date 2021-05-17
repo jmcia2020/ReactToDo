@@ -24,7 +24,7 @@ export default function Login() {
   };
 
   return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <label>Username <input type="text" name="username" /></label>
         <label>Password <input type="password" name="password" /></label>
         <button>Log In</button>
