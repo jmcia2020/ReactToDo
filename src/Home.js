@@ -42,6 +42,7 @@ export default function Home(){
 
   const incompleteCount = todos.filter(todo => !todo.completed).length;
 
+  
   const removeTodo = (id) => {
     console.log('removeTodo', id);
     const todosWithoutId = todos.filter(todo => todo.id !== id);
