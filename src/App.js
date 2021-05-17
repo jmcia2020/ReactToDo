@@ -9,7 +9,7 @@ import './App.css';
 
 
 function App() {
-  const [user, setUser] = useState({ name: 'Jean' });
+  const [user, setUser] = useState();
 
   return (
     <div className="App">
@@ -28,7 +28,7 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Home />
-            <Home user={user} />
+            
           </Route>
           <Route path="/AboutMe">
             <AboutMe />
