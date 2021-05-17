@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useAuth } from './contexts/Auth';
 import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
