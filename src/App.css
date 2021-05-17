@@ -29,12 +29,12 @@ h1 {
   background-color: #343A40;
 }
 
-.form-group {
+.login-form .form-group {
   float: right;
   width: 30%
 }
 
-.input {
+.login-form .input {
   padding: 6px;
   margin-top: 8px;
   font-size: 10px;
@@ -42,8 +42,9 @@ h1 {
   width: 60px;
 }
 
-.form-group button{
-  float: right;
+
+.login-form .form-group button{
+float: right
 }
 
 .todo-form {
