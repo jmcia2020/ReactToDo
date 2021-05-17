@@ -9,7 +9,7 @@ import './App.css';
 
 
 function App() {
-  const [user, setUser] = useState();
+  const [user] = useState();
 
   return (
     <div className="App">
@@ -18,7 +18,7 @@ function App() {
           <ul>
             <li><NavLink to = "/" exact>Home</NavLink></li>
             <li><NavLink to = "/AboutMe">AboutMe</NavLink></li>
-            <NavLogin > </NavLogin>
+            <NavLogin user={user}/>
           </ul>
         </nav>
       </header>
